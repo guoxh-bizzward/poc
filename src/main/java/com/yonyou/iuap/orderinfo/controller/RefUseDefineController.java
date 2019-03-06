@@ -278,16 +278,18 @@ public final class RefUseDefineController  {
 //        	refModel.setContent(content);
 //		} catch (Exception e) {
 //		}
-        String pkOrg = refModel.getPk_org();
-        String[] pkVal = refModel.getPk_val();
-        RefParamVO refParamVO = RefXMLParse.getInstance().getReParamConfig(refModel.getRefCode());
 
+        RefParamVO refParamVO = RefXMLParse.getInstance().getReParamConfig(refModel.getRefCode());
         RefParamConfig refParamConfigTable=refParamVO.getRefParamConfigTable();
+
+        String[] pkVal = refModel.getPk_val();
         if(refModel.getRefCode().equals("bd_common_currency")){
             List<String> params = new ArrayList<>();
+            //如果上一个组件获取的值为空,则本处的参照不显示值
             if(pkVal == null || pkVal.length ==0){
                 params.add("and 1=2");
             }
+            //将上一组件获取的值作为查询条件带入
             params.add("and id != '"+ pkVal[0]+"'");
             refParamConfigTable.setCondition(params);
         }
