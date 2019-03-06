@@ -4,7 +4,9 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.alibaba.fastjson.JSON;
 import com.yonyou.iuap.zhuzi_test.service.OrderInfoEnumService;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.WordUtils;
 import java.io.Serializable;
@@ -116,6 +118,13 @@ public class OrderInfoController extends BaseController{
         return super.buildSuccess();
     }
 
+    @RequestMapping("/selectData")
+    @ResponseBody
+    public Object selectData(){
+        List<Map> list = orderInfoEnumService.selectData();
+
+        return JSONArray.fromObject(list);
+    }
 
 
 }

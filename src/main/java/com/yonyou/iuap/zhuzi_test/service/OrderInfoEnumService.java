@@ -1,4 +1,5 @@
 package com.yonyou.iuap.zhuzi_test.service;
+import com.alibaba.fastjson.JSONArray;
 import com.yonyou.iuap.zhuzi_test.entity.OrderInfo;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -11,13 +12,9 @@ import com.yonyou.iuap.mvc.type.SearchParams;
 @Service
 public class OrderInfoEnumService implements QueryFeatureExtension<OrderInfo>{
     
-                private static Map<String, String> orderTypeMap = new HashMap<String, String>();
+                private Map<String, String> orderTypeMap = new HashMap<String, String>();
                 private static Map<String, String> orderStateMap = new HashMap<String, String>();
-        static{         
-                orderTypeMap.put("0", "生产订单");
-                orderTypeMap.put("1", "日常订单");
-                orderTypeMap.put("2", "临时订单");
-                orderTypeMap.put("3", "测试订单");
+        static{
                 orderStateMap.put("0", "未提交");
                 orderStateMap.put("1", "已提交");
         }
@@ -28,8 +25,9 @@ public class OrderInfoEnumService implements QueryFeatureExtension<OrderInfo>{
                 List<OrderInfo> resultList = new ArrayList<OrderInfo>();      
         for (OrderInfo entity : list) {
                         if(entity.getOrderType() != null){
-                                String value = orderTypeMap.get(entity.getOrderType().toString());
-                                entity.setOrderTypeEnumValue(value);
+                            selectData();//解决每个用户可能看到的下拉框数据不同的情况
+                            String value = orderTypeMap.get(entity.getOrderType().toString());
+                            entity.setOrderTypeEnumValue(value);
                         }
                         if(entity.getOrderState() != null){
                                 String value = orderStateMap.get(entity.getOrderState().toString());
@@ -56,5 +54,18 @@ public class OrderInfoEnumService implements QueryFeatureExtension<OrderInfo>{
         public SearchParams prepareQueryParam(SearchParams searchParams, Class modelClass) {
                 return searchParams;
         }
+
+        //组装下拉框数据
+    public List selectData(){
+        List<Map> list = new ArrayList<>();
+        for(int i=0;i<5;i++){
+            Map<String,Object> map = new HashMap<>();
+            map.put("key","key"+i);
+            map.put("value","value"+i);
+            orderTypeMap.put("value"+i,"key"+i);
+            list.add(map);
+        }
+        return list;
+    }
 }
 
