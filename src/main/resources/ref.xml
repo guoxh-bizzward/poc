@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+
+        <RefViewModelVO code="xwl_subject" i18nkey="ja.res.ref.0030" name="科目" type="6" path="xwl.subject">
+		<thead>
+			<field code="enum_type" i18nkey="ja.res.ref.0031">枚举类型</field>
+			<field code="enum_name" i18nkey="ja.res.ref.0032">名称</field>
+		</thead>
+		<table name="xwl_enum">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">enum_name</field>
+			<field code="extension">enum_type</field>
+			<field code="extension">enum_name</field>
+			<field code="condition">and code='subject' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="xwl_bank" i18nkey="ja.res.ref.0047" name="银行参照" type="6" path="xwl.bank">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0048">银行编码</field>
+			<field code="name" i18nkey="ja.res.ref.0049">银行名称</field>
+		</thead>
+		<table name="xwl_bank">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_weather" name="路桥天气" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">天气编码</field>
+			<field code="name">天气名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="HZLQ_WEATHER">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qshourmonitor" name="设施名称(桥隧实时监控)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='f463e60d9e9648b293f929bd62d39e14' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="xwl_companyInfo" i18nkey="ja.res.ref.0038" name="合作公司档案-挂靠公司" type="2" path="xwl.companyInfo" group="pap">
+		<thead>
+			<field code="ID" i18nkey="ja.res.ref.0039">公司ID</field>
+			<field code="company_name" i18nkey="ja.res.ref.0040">公司名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="xwl_company_info">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">company_name</field>
+			<field code="extension">ID</field>
+			<field code="extension">company_name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qswind" name="设施名称(桥隧风机)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<!--<field code="condition">and type='a1dc2a09038a457aadc4ccd9b18c8e56' and dr=0</field>-->
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_moudel" name="基础模块" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">模块编码</field>
+			<field code="name">模块名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="HZLQ_BASE_PROJECT">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <!--<RefViewModelVO code="common_ref" i18nkey="ja.res.ref.0005" name="组织人员" path="org.demo.ref" type="5">
+		<thead>
+			<field code="peocode" i18nkey="ja.res.ref.0006">人员编码</field>
+			<field code="peoname" i18nkey="ja.res.ref.0007">人员名称</field>
+		</thead>
+		<table name="EXAMPLE_CONTACTS">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">peocode</field>
+			<field code="refname">peoname</field>
+			<field code="pid">INSTITID</field>
+			<field code="fid">INSTITID</field>
+			<field code="extension">peocode</field>
+			<field code="extension">peoname</field>
+		</table>
+
+		<tableTree name="EXAMPLE_ORGANIZATION">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">INSTIT_CODE</field>
+			<field code="refname">INSTIT_NAME</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="fid"/>
+		</tableTree>
+	</RefViewModelVO>-->
+
+
+
+        <RefViewModelVO code="hzlq_pcroom" name="设备名称(机房)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设备编码</field>
+			<field code="name">设备名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='bdf7232dcda54ae1856165381a9b8356' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_gypump" name="泵房名称(管养运行)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">泵房编码</field>
+			<field code="name">泵房名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='ca9480f94d1b48b984914a133f554783' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qsmonitor" name="设施名称(桥隧监控)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='594974736bed420e9c00d5fdb725fe0d' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_datatype"  name="基础数据类型" path="org.demo.ref" type="3">
+		<thead>
+			<field code="code" >基础数据类型编码</field>
+			<field code="name" >基础数据类型</field>
+		</thead>
+		<table name="HZLQ_BASETYPE_DICT">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">BQTYPE</field>
+			<field code="fid">BQTYPE</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+
+		<tableTree name="HZLQ_BQ_TYPE">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+		</tableTree>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_qspumpcreate" name="泵站名称(桥隧泵房生产)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">泵站编码</field>
+			<field code="name">泵站名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='d4fd73ba08f1437c83a856992a43928d' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="xwl_ownerInfo" i18nkey="ja.res.ref.0051" name="车主信息" type="2" path="xwl.ownerInfo">
+		<thead>
+				
+			<field code="name" i18nkey="ja.res.ref.0052">车主姓名</field>
+			<field code="id_card" i18nkey="ja.res.ref.0053">身份证号</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="xwl_owner_info">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">name</field>
+			<field code="extension">name</field>
+			<field code="extension">id_card</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="xwl_category" i18nkey="ja.res.ref.0030" name="款项类别" type="6" path="xwl.category">
+		<thead>
+			<field code="enum_type" i18nkey="ja.res.ref.0031">枚举类型</field>
+			<field code="enum_name" i18nkey="ja.res.ref.0032">名称</field>
+		</thead>
+		<table name="xwl_enum">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">enum_name</field>
+			<field code="extension">enum_type</field>
+			<field code="extension">enum_name</field>
+			<field code="condition">and code='category' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_qssky" name="被巡查设施(桥隧天桥)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">被巡查设施编码</field>
+			<field code="name">被巡查设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='b86ed0fa364b41bd81d9c1f041c95f83' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="neworganizition" i18nkey="ja.res.ref.0020" name="组织-平台" type="1" group="pap">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0012">组织编码</field>
+			<field code="name" i18nkey="ja.res.ref.0013">组织名称</field>
+		</thead>
+		<tableTree name="ORG_ORGANIZATION">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</tableTree>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_qswind" name="设施名称(桥隧风机)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='a1dc2a09038a457aadc4ccd9b18c8e56' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="xwl_supplier" i18nkey="ja.res.ref.0041" name="供应商" type="2" path="xwl.supplier" group="pap">
+		<thead>
+			<field code="ID" i18nkey="ja.res.ref.0042">供应商ID</field>
+			<field code="name" i18nkey="ja.res.ref.0043">供应商名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="xwl_supplier">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">name</field>
+			<field code="extension">ID</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="newdept1" i18nkey="ja.res.ref.0008" name="部门" type="1" group="pap">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0009">部门编码</field>
+			<field code="name" i18nkey="ja.res.ref.0010">部门名称</field>
+		</thead>
+		<tableTree name="ORG_DEPARTMENT">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</tableTree>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_gyboat" name="船闸名称(管养)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">船闸编码</field>
+			<field code="name">船闸名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='3f4139551829437285d3ee2746788992' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="common_ref_treecard" i18nkey="ja.res.ref.0005" name="组织人员" path="org.demo.ref" type="3">
+		<thead>
+			<field code="peocode" i18nkey="ja.res.ref.0006">人员编码</field>
+			<field code="peoname" i18nkey="ja.res.ref.0007">人员名称</field>
+		</thead>
+		<table name="EXAMPLE_CONTACTS">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">peocode</field>
+			<field code="refname">peoname</field>
+			<field code="pid">INSTITID</field>
+			<field code="fid">INSTITID</field>
+			<field code="extension">peocode</field>
+			<field code="extension">peoname</field>
+		</table>
+
+		<tableTree name="EXAMPLE_ORGANIZATION">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">INSTIT_CODE</field>
+			<field code="refname">INSTIT_NAME</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="fid"/>
+		</tableTree>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="xwl_customer" i18nkey="ja.res.ref.0035" name="客户" type="2" path="xwl.customer" group="pap">
+		<thead>
+			<field code="ID" i18nkey="ja.res.ref.0036">客户ID</field>
+			<field code="name" i18nkey="ja.res.ref.0037">客户姓名</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="xwl_customer">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">name</field>
+			<field code="extension">ID</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="xwl_dept" i18nkey="ja.res.ref.0008" name="部门" type="1" path="xwl.dept" group="pap">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0009">部门编码</field>
+			<field code="name" i18nkey="ja.res.ref.0010">部门名称</field>
+		</thead>
+		<tableTree name="org_department">
+			<field code="id">id</field>
+			<field code="refpk">id</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">parent_id</field>
+			<field code="extension">id</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</tableTree>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_riverbook" name="河道名称(设备)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">河道编码</field>
+			<field code="name">河道名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='78b34fbb170c4ebc86ec40e1e67327cc' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="bd_common_dept" i18nkey="ja.res.ref.0008" name="部门" type="6">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0009">部门编码</field>
+			<field code="name" i18nkey="ja.res.ref.0010">部门名称</field>
+		</thead>
+		<table name="ORG_DEPARTMENT">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="app_user" i18nkey="ja.res.ref.0026" name="用户" type="5" path="app.user">
+		<thead>
+			<field code="login_name" i18nkey="ja.res.ref.0028">登录名</field>
+			<field code="name" i18nkey="ja.res.ref.0029">名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="app_user">
+			<field code="id">id</field>
+			<field code="refpk">id</field>
+			<field code="refcode">login_name</field>
+			<field code="refname">name</field>
+			<field code="extension">id</field>
+			<field code="extension">login_name</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="bd_common_currency" i18nkey="ja.res.ref.0002" name="货币" path="org.demo.currency" type="6">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0003">币种编码</field>
+			<field code="name" i18nkey="ja.res.ref.0004">币种名称</field>
+		</thead>
+		<table name="currtype">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_qsnight" name="设施名称(桥隧夜间)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='47ca83e5d28d4c70b372ac105a2829c1' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="train_user" type="6" i18nkey="ja.res.ref.0017" name="培训用户" path="org.train.user">
+		<thead>
+			<field code="login_name" i18nkey="ja.res.ref.0018">用户编码</field>
+			<field code="name" i18nkey="ja.res.ref.0019">用户名称</field>
+		</thead>
+		<table name="APP_USER">
+			<field code="id">ID</field>
+			<field code="refpk">id</field>
+			<field code="refcode">login_name</field>
+			<field code="refname">name</field>
+			<field code="extension">login_name</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="checkbox_ref" type="4" name="checkbox_ref" path="org.demo.ref">
+		<thead>
+			<field code="peocode" i18nkey="ja.res.ref.0006">人员编码</field>
+			<field code="peoname" i18nkey="ja.res.ref.0007">人员名称</field>
+		</thead>
+		<!-- name是数据库表名称 -->
+		<table name="EXAMPLE_CONTACTS">
+			<field code="id">id</field>
+			<field code="refpk">id</field>
+			<field code="refcode">peocode</field>
+			<field code="refname">peoname</field>
+			<field code="extension">peocode</field>
+			<field code="extension">peoname</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_qshandover" name="设施名称(桥隧交接班)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<!--<field code="condition">and type='f31910a570024500ade387962b3c068b' and dr=0</field>-->
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="prmproject" type="2" name="巡检项目" path="org.demo.ref">
+		<thead>
+			<field code="code">项目编码</field>
+			<field code="name">项目名称</field>
+		</thead>
+		<table name="prm_project">
+			<field code="id">id</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="newdept" i18nkey="ja.res.ref.0008" name="部门" type="1" group="pap">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0009">部门编码</field>
+			<field code="name" i18nkey="ja.res.ref.0010">部门名称</field>
+		</thead>
+		<tableTree name="ORG_DEPARTMENT">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</tableTree>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_datatype" name="组织人员" path="org.demo.ref" type="3">
+		<thead>
+			<field code="code">基础数据类型编码</field>
+			<field code="name">基础数据类型</field>
+		</thead>
+		<table name="HZLQ_BASETYPE_DICT">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">BQTYPE</field>
+			<field code="fid">BQTYPE</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+
+		<tableTree name="HZLQ_BQ_TYPE">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+		</tableTree>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qcpump" name="泵房名称(庆春)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">泵房编码</field>
+			<field code="name">泵房名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='6c007b5f643547e2be9ba1de7ba0d557' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_qsfloor" name="被巡查设施(桥隧地道)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">被巡查设施编码</field>
+			<field code="name">被巡查设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='f35a8dc7a9324b32a1f71f0c464eb925' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="common_ref_tree" type="1" i18nkey="ja.res.ref.0022" name="组织机构" path="org.demo.ref">
+		<thead>
+			<field code="INSTIT_CODE" i18nkey="ja.res.ref.0023">机构编码</field>
+			<field code="INSTIT_NAME" i18nkey="ja.res.ref.0024">机构名称</field>
+		</thead>
+		<tableTree name="EXAMPLE_ORGANIZATION">
+			<field code="id">ID</field>
+			<field code="refpk">INSTITID</field>
+			<field code="refcode">INSTIT_CODE</field>
+			<field code="refname">INSTIT_NAME</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="extension">INSTIT_CODE</field>
+			<field code="extension">INSTIT_NAME</field>
+		</tableTree>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="bd_common_user_table" i18nkey="ja.res.ref.0027" name="用户" type="6">
+		<thead>
+			<field code="login_name" i18nkey="ja.res.ref.0028">登录名</field>
+			<field code="name" i18nkey="ja.res.ref.0029">用户姓名</field>
+		</thead>
+		<table name="APP_USER">
+			<field code="id">ID</field>
+			<field code="refpk">id</field>
+			<field code="refcode">login_name</field>
+			<field code="refname">name</field>
+			<field code="extension">login_name</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="bd_common_user_table" i18nkey="ja.res.ref.0027" name="用户" type="6">
+		<thead>
+			<field code="login_name" i18nkey="ja.res.ref.0028">登录名</field>
+			<field code="name" i18nkey="ja.res.ref.0029">用户姓名</field>
+		</thead>
+		<table name="APP_USER">
+			<field code="id">ID</field>
+			<field code="refpk">id</field>
+			<field code="refcode">login_name</field>
+			<field code="refname">name</field>
+			<field code="extension">login_name</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_org_old" name="组织部门(hzlq)" path="org.demo.ref" type="3">
+		<thead>
+			<field code="code">组织编号</field>
+			<field code="name">组织名称</field>
+		</thead>
+		<table name="org_dept">
+			<field code="id">PK_DEPT</field>
+			<field code="refpk">PK_DEPT</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">PK_FATHERORG</field>
+			<field code="fid">PK_FATHERORG</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition"> and PK_FATHERORG!='~'and dr=0</field>
+		</table>
+
+		<tableTree name="org_dept">
+			<field code="id">PK_DEPT</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">''</field>
+			<field code="fid"/>
+			<field code="condition">and PK_FATHERORG='~' and dr=0</field>
+		</tableTree>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_riverbookproblem" name="问题类型(河道)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">问题编码</field>
+			<field code="name">问题名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='1789a27e12c7491faf60375468e09163' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="common_ref_table" type="2" i18nkey="ja.res.ref.0026" name="人员" path="org.demo.ref">
+		<thead>
+			<field code="peocode" i18nkey="ja.res.ref.0006">人员编码</field>
+			<field code="peoname" i18nkey="ja.res.ref.0007">人员名称</field>
+		</thead>
+		<table name="EXAMPLE_CONTACTS">
+			<field code="id">id</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">peocode</field>
+			<field code="refname">peoname</field>
+			<field code="extension">peocode</field>
+			<field code="extension">peoname</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_qshandover" name="设施名称(桥隧交接班)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<!--<field code="condition">and type='f31910a570024500ade387962b3c068b' and dr=0</field>  -->
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="demo_dept_hyn" i18nkey="ja.res.ref.0008" name="部门" type="1" path="com.demo.iuap.hyn">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0009">部门编码</field>
+			<field code="name" i18nkey="ja.res.ref.0010">部门名称</field>
+		</thead>
+		<tableTree name="ORG_DEPARTMENT">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</tableTree>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qccharge" name="配电室名称(庆春)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">配电室编码</field>
+			<field code="name">配电室名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='ce1fca2f2ee24a23a57c7fa721930cc7' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="currency_ref" name="币种" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">编码</field>
+			<field code="name">名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="currtype">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">id</field>
+			<field code="refpk">id</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<!-- extension：扩展的查询字段,可配置多个,非必填 -->
+			<field code="extension">code</field>
+			<!-- extension：扩展的查询字段,可配置多个,非必填 -->
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_lockbq" name="水闸名称(设备)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">水闸编码</field>
+			<field code="name">水闸名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='ad8303fb46ee4f8fa89bd51fde884f78' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="bd_common_vessel" i18nkey="ja.res.ref.0014" name="船公司" type="6">
+		<thead>
+			<field code="vessel_code" i18nkey="ja.res.ref.0015">船公司编码</field>
+			<field code="vessel_name" i18nkey="ja.res.ref.0016">船公司名称</field>
+		</thead>
+		<table name="SALE_VESSEL">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">vessel_code</field>
+			<field code="refname">vessel_name</field>
+			<field code="extension">vessel_code</field>
+			<field code="extension">vessel_name</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="poc_purchase_details" type="2" i18nkey="ja.res.ref.0026" name="车辆资料" path="org.demo.cardetails">
+		<thead>
+			<field code="car_model" i18nkey="ja.res.ref.0023">车辆型号</field>
+			<field code="carsumer_name" i18nkey="ja.res.ref.0024">车辆名称</field>
+		</thead>
+		<tableTree name="EXAMPLE_ORGANIZATION">
+			<field code="id">ID</field>
+			<field code="refpk">INSTITID</field>
+			<field code="refcode">car_model</field>
+			<field code="refname">carsumer_name</field>
+			<field code="pid">PARENT_ID</field>
+			<field code="extension">car_model</field>
+			<field code="extension">carsumer_name</field>
+		</tableTree>
+	</RefViewModelVO>
+        <RefViewModelVO code="currency1_ref" name="币种" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">编码</field>
+			<field code="name">名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="BD_CURRTYPE">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">pk_currtype</field>
+			<field code="refpk">PK_CURRTYPE</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<!-- extension：扩展的查询字段,可配置多个,非必填 -->
+			<field code="extension">code</field>
+			<!-- extension：扩展的查询字段,可配置多个,非必填 -->
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_gyprotect" name="养护单位(河道巡查)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">养护单位编码</field>
+			<field code="name">养护单位名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='1d431316cf1a47a3aee1372fec5fb7fc' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qspumpcheck" name="泵站名称(桥隧泵房巡查)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">泵站编码</field>
+			<field code="name">泵站名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='64235ba2716844f6b66f943d12a2d612' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qstf" name="设施名称(桥隧突发)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">设施编码</field>
+			<field code="name">设施名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<!--<field code="condition">and type='a3bae2e894bf4c08890131a4a8c07595' and dr=0</field>-->
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_qsday" name="使用部门(桥隧日常)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">使用部门编码</field>
+			<field code="name">使用部门名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='96e388a57d854dbe9750e0edc9863c0c' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="order_model" i18nkey="ja.res.ref.0021" name="物料型号" path="org.demo.user" type="6">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0006">型号编码</field>
+			<field code="name" i18nkey="ja.res.ref.0007">型号名称</field>
+		</thead>
+
+		<table name="ORDER_MODEL">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<filters>
+				<filter code="code" value="="/>
+				<filter code="name" value="="/>
+			</filters>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="lc_qs" name="绿城期数" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">期数编码</field>
+			<field code="name">期数名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="lc_xsr_projectitem">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">my_periods_code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">my_periods_name</field>
+			<field code="extension">my_periods_code</field>
+			<field code="extension">my_periods_name</field>			
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_riverbookproblem" name="问题类型(河道整改)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">问题编码</field>
+			<field code="name">问题名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='1789a27e12c7491faf60375468e09163' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="ncdept" name="NC部门"  type = "1">
+<!-- 表头，列表需要展示的字段 -->
+		<thead>
+<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">编码</field>
+			<field code="name">名称</field>
+		</thead>
+<!-- 树 name：列表对应的数据库表名，必填 -->
+		<tableTree name="org_dept">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">pk_dept</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<!-- pid：数据库中“树节点”的字段名,必填 -->
+			<field code="pid">pk_fatherorg</field>
+			<!-- extension：扩展的查询字段,非必填 -->
+			<field code="extension">code</field>
+			<!-- extension：扩展的查询字段,非必填 -->
+			<field code="extension">name</field>
+			<!-- extension：扩展的查询字段,非必填 -->
+			<field code="extension">address</field>
+			<!-- extension：扩展的查询字段,非必填 -->
+			<field code="extension">venddate</field>
+			<!-- condition：静态查询条件sql,非必填-->
+			<field code="condition">and dr=0</field>
+			<!-- filters：多条件过滤,非必填-->
+			<filters>
+				<!-- code：数据库字段值，value：条件-->
+				<filter code="name" value="=" />
+			</filters>
+			<!-- 排序 
+<field code="sort">material_name_en,material_name_en</field>
+			dataPermission：对应数据权限的资源id,非必填，不填默认为RefViewModelVO中code(参照编码）-->
+		</tableTree>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="employee" i18nkey="ja.res.ref.0011" type="2" path="org.demo.ref" name="人员">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0012">人员编码</field>
+			<field code="name" i18nkey="ja.res.ref.0013">姓名</field>
+
+		</thead>
+		<table name="employee">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="hzlq_rivercheck" name="河道名称(河道巡查)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">河道编码</field>
+			<field code="name">河道名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='1eb1033e452743a38c606111ef51fee2' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="xwl_enum" i18nkey="ja.res.ref.0008" name="枚举参照" type="6" path="xwl.enum">
+		<thead>
+			<field code="ID" i18nkey="ja.res.ref.0009">值</field>
+			<field code="enum_name" i18nkey="ja.res.ref.0010">名称</field>
+		</thead>
+		<table name="xwl_enum">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">enum_name</field>
+			<field code="extension">ID</field>
+			<field code="extension">enum_name</field>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_bq" name="基础报表" path="org.demo.ref" type="3">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">基础数据类型编码</field>
+			<field code="name">基础数据类型</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="HZLQ_BQ_TYPE">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="pid">TYPE</field>
+			<field code="fid">TYPE</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and dr=0</field>
+		</table>
+		<tableTree name="HZLQ_BASE_PROJECT">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="pid">''</field>
+			<field code="fid"/>
+			<field code="condition">and dr=0</field>
+		</tableTree>
+	</RefViewModelVO>
+        <RefViewModelVO code="post_level" i18nkey="ja.res.ref.0021" name="岗位职级" path="org.demo.user" type="6">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0006">职级编码</field>
+			<field code="type" i18nkey="ja.res.ref.0007">职级类型</field>
+			<field code="level" i18nkey="ja.res.ref.0007">职级级别</field>
+		</thead>
+
+		<table name="POST_LEVEl">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">level</field>
+			<field code="extension">code</field>
+			<field code="extension">level</field>
+			<field code="extension">type</field>
+			<filters>
+				<filter code="code" value="="/>
+				<filter code="level" value="="/>
+				<filter code="type" value="="/>
+			</filters>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="xwl_insuranceCompany" name="保险公司" i18nkey="ja.res.ref.0044" type="2" path="xwl.insuranceCompany">
+		<thead>
+				
+			<field code="name" i18nkey="ja.res.ref.0046">保险公司名称</field>
+			<field code="mobile_phone" i18nkey="ja.res.ref.0050">移动手机号</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="xwl_insurance_company">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">ID</field>
+			<field code="refname">name</field>
+			<field code="extension">name</field>
+			<field code="extension">mobile_phone</field>
+			
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="hzlq_project" name="项目名称(河道巡查)" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">项目编码</field>
+			<field code="name">项目名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="hzlq_base_dict">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<field code="condition">and type='38726a7fe28849c6afab363aac845b02' and dr=0</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="bd_common_user" i18nkey="ja.res.ref.0021" name="员工" path="org.demo.user" type="6">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0006">人员编码</field>
+			<field code="name" i18nkey="ja.res.ref.0007">人员名称</field>
+		</thead>
+
+		<table name="BD_STAFF">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+			<filters>
+				<filter code="code" value="=" />
+				<filter code="name" value="=" />
+			</filters>
+		</table>
+	</RefViewModelVO>
+
+        <RefViewModelVO code="currency_ref11111" name="币种2222" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">编码</field>
+			<field code="name">名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="BD_CURRTYPE">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">PK_CURRTYPE</field>
+			<field code="refpk">PK_CURRTYPE</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">name</field>
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="lc_yt" name="绿城业态" type="2">
+		<!-- 表头，列表需要展示的字段 -->
+		<thead>
+		<!-- code:后台返回数据对应的key值,value:表头名称 -->
+			<field code="code">业态编码</field>
+			<field code="name">业态名称</field>
+		</thead>
+		<!-- 表体name：列表对应的数据库表名，必填 -->
+		<table name="lc_xsr_yt">
+			<!-- id：数据库中“id”的字段名,必填 -->
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<!-- refcode：数据库中“编码”的字段名,必填 -->
+			<field code="refcode">my_code</field>
+			<!-- refname：数据库中“名称”的字段名,必填 -->
+			<field code="refname">my_name</field>
+			<field code="extension">my_code</field>
+			<field code="extension">my_name</field>			
+		</table>
+	</RefViewModelVO>
+        <RefViewModelVO code="bd_common_org" i18nkey="ja.res.ref.0011" name="组织" path="org.demo.org" type="6">
+		<thead>
+			<field code="code" i18nkey="ja.res.ref.0012">组织编码</field>
+			<field code="name" i18nkey="ja.res.ref.0013">组织名称</field>
+		</thead>
+		<table name="ORG_ORGANIZATION">
+			<field code="id">ID</field>
+			<field code="refpk">ID</field>
+			<field code="refcode">code</field>
+			<field code="refname">name</field>
+			<field code="extension">code</field>
+			<field code="extension">name</field>
+		</table>
+	</RefViewModelVO>
+
+    
+</root>
