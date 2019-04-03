@@ -93,7 +93,7 @@
 	
 	<bean id="signAuthFilter" class="com.yonyou.iuap.generic.filter.SignAuthFilter">
 		<property name="prefix" value="${context.name}" />
-		<!--<property name="authFilePath" value="${authfile.path}"/>-->
+		<property name="authFilePath" value="${authfile.path}"/>
 	</bean>
 
 	<bean id="logout" class="com.yonyou.iuap.auth.shiro.LogoutFilter"></bean>
@@ -120,6 +120,7 @@
 				/**/api/** = anon
 				/**/cxf/** = anon
 				/**/jaxrs/** = anon
+				/sign/** = anon
 				/**/restWithSign/** = signAuth
 				/** = statelessAuthc
 			</value>

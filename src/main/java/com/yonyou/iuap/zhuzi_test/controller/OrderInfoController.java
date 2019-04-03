@@ -59,7 +59,7 @@ public class OrderInfoController extends BaseController{
     private static final String MODELCODE = "orderInfo";
 
 
-    @RequestMapping(value = "/list")
+    @RequestMapping(value = {"/list","/restWithSign/list"})
     @ResponseBody
     public Object list(PageRequest pageRequest, SearchParams searchParams) {
         Page<OrderInfo> page = this.orderInfoService.selectAllByPage(pageRequest, searchParams);

@@ -37,7 +37,7 @@ public class OrderInfoService extends GenericIntegrateService<OrderInfo>{
 
     @Override
     public Page<OrderInfo> selectAllByPage(PageRequest pageRequest, SearchParams searchParams) {
-        searchParams.addCondition("sql",buildPermSql());
+        //searchParams.addCondition("sql",buildPermSql());
         return super.selectAllByPage(pageRequest, searchParams);
     }
 
