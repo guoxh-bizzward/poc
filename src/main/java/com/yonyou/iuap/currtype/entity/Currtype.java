@@ -31,7 +31,7 @@ import java.math.BigDecimal;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Table(name = "currtype")
 
-@CodingEntity(codingField="")
+@CodingEntity(codingField="code")
 public class Currtype extends AbsDrModel implements Serializable,MultiTenant
 {
     @Id
@@ -55,6 +55,7 @@ public class Currtype extends AbsDrModel implements Serializable,MultiTenant
 
     @Condition
     @Column(name="code")
+
     private String code;        //编码
 
     public void setCode(String code){
