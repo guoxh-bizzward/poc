@@ -1,12 +1,12 @@
-package com.yonyou.iuap.zhuzi_test.entity;
+package com.yonyou.iuap.order_info.entity;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.yonyou.iuap.baseservice.entity.AbsDrModel;
+import com.yonyou.iuap.baseservice.bpm.entity.AbsBpmModel;
+import com.yonyou.iuap.baseservice.print.entity.Printable;      
 import com.yonyou.iuap.baseservice.multitenant.entity.MultiTenant;
 import com.yonyou.iuap.baseservice.entity.annotation.Reference;
 
-import com.yonyou.iuap.baseservice.print.entity.Printable;
 import com.yonyou.iuap.baseservice.support.condition.Condition;
 import com.yonyou.iuap.baseservice.support.condition.Match;
 import com.yonyou.iuap.baseservice.support.generator.GeneratedValue;
@@ -14,7 +14,10 @@ import com.yonyou.iuap.baseservice.support.generator.Strategy;
 import com.yonyou.iuap.baseservice.entity.annotation.CodingEntity;
 import com.yonyou.iuap.baseservice.entity.annotation.CodingField;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -22,15 +25,15 @@ import java.util.Random;
 import java.math.BigDecimal;
 
 /**
- * 单表orderinfo
- * @date 2019年02月21日 下午03点53分03秒
+ * orderinfo_new
+ * @date 2019年04月17日 下午09点33分42秒
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Table(name = "order_info")
-@Entity(name = "orderInfo")
-@CodingEntity(codingField="")
-public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, Printable
+@Table(name = "order_info_new")
+
+@CodingEntity(codingField="orderNo")
+public class OrderInfoNew extends AbsBpmModel  implements Serializable,MultiTenant,Printable
 {
     @Id
     @GeneratedValue
@@ -49,6 +52,10 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
         this.id = id;
     }
     
+        @Override
+        public String getMainBoCode() {
+                return "order_info_new";
+        }
 
 
     @Condition(match=Match.EQ)
@@ -72,8 +79,20 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
         return this.orderTypeEnumValue;
     }
 
+    @Transient
+    private String purOrgName;        //采购单位名称
+
+    public void setPurOrgName(String purOrgName){
+        this.purOrgName = purOrgName;
+    }
+    public String getPurOrgName(){
+        return this.purOrgName;
+    }
+    
+
     @Condition(match=Match.EQ)
     @Column(name="order_no")
+    @CodingField(code="orderno")
     private String orderNo;        //编号
 
     public void setOrderNo(String orderNo){
@@ -86,7 +105,7 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
 
     @Condition(match=Match.EQ)
     @Column(name="pur_org")
-    @Reference(code="neworganizition",srcProperties={ "name"}, desProperties={ "purOrgSrc"})
+    @Reference(code="common_ref",srcProperties={ "peoname"}, desProperties={ "purOrgName"})
     private String purOrg;        //采购单位
 
     public void setPurOrg(String purOrg){
@@ -121,19 +140,6 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
     }
     
 
-    @Condition
-    @Column(name="apply_no")
-    @Reference(code="bd_common_currency",srcProperties={ "name"}, desProperties={ "applyName"})
-    private String applyNo;        //供应商编号
-
-    public void setApplyNo(String applyNo){
-        this.applyNo = applyNo;
-    }
-    public String getApplyNo(){
-        return this.applyNo;
-    }
-    
-
     @Condition(match=Match.EQ)
     @Column(name="pur_group_no")
     private String purGroupNo;        //采购组编号
@@ -146,17 +152,6 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
     }
     
 
-    @Transient
-    private String purOrgSrc;        //purOrgSrc
-
-    public void setPurOrgSrc(String purOrgSrc){
-        this.purOrgSrc = purOrgSrc;
-    }
-    public String getPurOrgSrc(){
-        return this.purOrgSrc;
-    }
-    
-
     @Condition
     @Column(name="confirm_time")
     private String confirmTime;        //确认时间
@@ -166,17 +161,6 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
     }
     public String getConfirmTime(){
         return this.confirmTime;
-    }
-    
-
-    @Transient
-    private String applyName;        //applyName
-
-    public void setApplyName(String applyName){
-        this.applyName = applyName;
-    }
-    public String getApplyName(){
-        return this.applyName;
     }
     
 
@@ -201,6 +185,11 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
         return this.orderStateEnumValue;
     }
 
+        @Override
+        public String getBpmBillCode() {
+        return getOrderNo();
+        }
+
 
 
     @Column(name="TENANT_ID")
@@ -214,10 +203,6 @@ public class OrderInfo extends AbsDrModel implements Serializable,MultiTenant, P
     }
 
 
-    @Override
-    public String getMainBoCode() {
-        return "order_info";
-    }
 }
 
 

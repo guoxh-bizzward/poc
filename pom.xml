@@ -29,6 +29,17 @@
              <artifactId>starter</artifactId>
              <scope>provided</scope>
          </dependency>
+
+        <dependency>
+            <groupId>com.yonyou.iuap</groupId>
+            <artifactId>iuap-mybatis</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yonyou.iuap.portal</groupId>
+            <artifactId>integration_client</artifactId>
+            <version>3.5.6-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <!-- 以下为profile示例 -->

@@ -1,10 +1,10 @@
-package com.yonyou.iuap.duban.service;
+package com.yonyou.iuap.order_info.service;
 
 import com.yonyou.iuap.baseservice.bpm.service.GenericBpmService;
 import com.yonyou.iuap.bpm.pojo.BPMFormJSON;
 import com.yonyou.iuap.context.InvocationInfoProxy;
-import com.yonyou.iuap.duban.dao.DubanMapper;
-import com.yonyou.iuap.duban.entity.Duban;
+import com.yonyou.iuap.order_info.dao.OrderInfoNewMapper;
+import com.yonyou.iuap.order_info.entity.OrderInfoNew;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -12,18 +12,18 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 
 @Service
-public class DubanBpmService extends GenericBpmService<Duban>{
+public class OrderInfoNewBpmService extends GenericBpmService<OrderInfoNew>{
 
-    private DubanMapper DubanMapper;
+    private OrderInfoNewMapper OrderInfoNewMapper;
 
     @Autowired
-    public void setDubanMapper(DubanMapper DubanMapper) {
-        this.DubanMapper = DubanMapper;
-        super.setIbatisMapperEx( DubanMapper);
+    public void setOrderInfoNewMapper(OrderInfoNewMapper OrderInfoNewMapper) {
+        this.OrderInfoNewMapper = OrderInfoNewMapper;
+        super.setIbatisMapperEx( OrderInfoNewMapper);
     }
 
     @Override
-    public BPMFormJSON buildBPMFormJSON(String processDefineCode, Duban entity) {
+    public BPMFormJSON buildBPMFormJSON(String processDefineCode, OrderInfoNew entity) {
         try {
             BPMFormJSON bpmform = new BPMFormJSON();
             bpmform.setProcessDefinitionKey(processDefineCode);
@@ -38,7 +38,7 @@ public class DubanBpmService extends GenericBpmService<Duban>{
             String title = userName + "提交的单据,单号是" + entity.getBpmBillCode() + ", 请审批";
             bpmform.setTitle(title);
             // 实例名
-            bpmform.setFunCode("duban");
+            bpmform.setFunCode("orderInfoNew");
             // 单据id
             bpmform.setFormId(entity.getId().toString());
             // 单据号
@@ -48,11 +48,11 @@ public class DubanBpmService extends GenericBpmService<Duban>{
             // 其他变量
             bpmform.setOtherVariables(buildEntityVars(entity));
             // 单据url
-            bpmform.setFormUrl("/fe/duban/#/Duban-edit?btnFlag=2&search_id="+entity.getId());  // 单据url
+            bpmform.setFormUrl("/fe/order_info_new/#/OrderInfoNew-edit?btnFlag=2&search_id="+entity.getId());  // 单据url
             // 流程实例名称
             bpmform.setProcessInstanceName(title);                                                                              // 流程实例名称
             // 流程审批后，执行的业务处理类(controller对应URI前缀)
-            bpmform.setServiceClass("/poc/DUBAN");// 流程审批后，执行的业务处理类(controller对应URI前缀)
+            bpmform.setServiceClass("/poc/order_info_new");// 流程审批后，执行的业务处理类(controller对应URI前缀)
             //设置单据打开类型 uui/react
             bpmform.setFormType(BPMFormJSON.FORMTYPE_REACT);
             return bpmform;

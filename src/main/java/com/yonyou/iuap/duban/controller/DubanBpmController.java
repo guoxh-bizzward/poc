@@ -31,4 +31,5 @@ public class DubanBpmController extends GenericBpmController<Duban>{
         super.setService(service);
     }
 
+
 }

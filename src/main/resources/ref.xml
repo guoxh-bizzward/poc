@@ -129,7 +129,7 @@
 			<field code="condition">and dr=0</field>
 		</table>
 	</RefViewModelVO>
-        <!--<RefViewModelVO code="common_ref" i18nkey="ja.res.ref.0005" name="组织人员" path="org.demo.ref" type="5">
+        <RefViewModelVO code="common_ref" i18nkey="ja.res.ref.0005" name="组织人员" path="org.demo.ref" type="5">
 		<thead>
 			<field code="peocode" i18nkey="ja.res.ref.0006">人员编码</field>
 			<field code="peoname" i18nkey="ja.res.ref.0007">人员名称</field>
@@ -153,7 +153,7 @@
 			<field code="pid">PARENT_ID</field>
 			<field code="fid"/>
 		</tableTree>
-	</RefViewModelVO>-->
+	</RefViewModelVO>
 
 
 
@@ -1346,7 +1346,7 @@
 			<field code="extension">my_name</field>			
 		</table>
 	</RefViewModelVO>
-        <RefViewModelVO code="bd_common_org" i18nkey="ja.res.ref.0011" name="组织" path="org.demo.org" type="6">
+        <RefViewModelVO code="bd_common_org" i18nkey="ja.res.ref.0011" name="组织" path="org.demo.org" type="2">
 		<thead>
 			<field code="code" i18nkey="ja.res.ref.0012">组织编码</field>
 			<field code="name" i18nkey="ja.res.ref.0013">组织名称</field>
@@ -1358,6 +1358,9 @@
 			<field code="refname">name</field>
 			<field code="extension">code</field>
 			<field code="extension">name</field>
+			<filters>
+				<filter code="likeSearchFiled" value="code,name,short_name"></filter>
+			</filters>
 		</table>
 	</RefViewModelVO>
 
