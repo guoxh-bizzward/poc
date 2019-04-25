@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.yonyou.iuap.order_info.entity.OrderInfoNew;
+import com.yonyou.iuap.order_info.entity.PrintSubTest;
 import com.yonyou.iuap.order_info.entity.PrintTest;
 import com.yonyou.iuap.order_info.service.OrderInfoNewService;
 import com.yonyou.iuap.baseservice.ref.service.RefCommonService;
@@ -50,6 +51,7 @@ public class OrderInfoNewPrintController extends GenericPrintController<OrderInf
         PrintTest vo = new PrintTest();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         vo.setId(id);
+//        vo.setId(id);
         vo.setConfirmTime(sdf.format(new Date()));
         vo.setOrderNo("123");
         vo.setOrderType("111");
@@ -95,6 +97,24 @@ public class OrderInfoNewPrintController extends GenericPrintController<OrderInf
             childrenDataJson.addAll(subList);
             boAttr.put(subBoCode, childrenDataJson);//子表填充
         }*/
+        List list = new ArrayList();
+        for(int i=0;i<1;i++){
+            PrintSubTest printSubTest = new PrintSubTest();
+            printSubTest.setId(id);
+            printSubTest.setSub_id(id);
+            printSubTest.setCode("code"+i);
+            printSubTest.setName("name"+i);
+            printSubTest.setValue("value"+i);
+            printSubTest.setCreateTime(sdf.format(new Date()));
+            printSubTest.setCreateUser("1234");
+            printSubTest.setLastModified(sdf.format(new Date()));
+            printSubTest.setTs("1");
+
+            list.add(printSubTest);
+        }
+        JSONArray child = new JSONArray();
+        child.addAll(list);
+        boAttr.put("sub_table",child);
 
 
         logger.debug("打印回调数据:"+boAttr.toString());
